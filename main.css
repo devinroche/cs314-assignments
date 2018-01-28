@@ -1,0 +1,105 @@
+.rotate90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    margin-bottom: 40px;
+    -webkit-animation: spin 10s linear infinite;
+    -moz-animation: spin 10s linear infinite;
+    animation: spin 10s linear infinite;
+}
+
+@-moz-keyframes spin {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+h3 {
+    padding-top: 100px;
+}
+
+body {
+    width: 80vw;
+    margin: 0 auto;
+    background: linear-gradient(67deg, #ff0000, #3a00ff);
+    background-size: 400% 400%;
+    -webkit-animation: AnimationName 0s ease infinite;
+    color: rebeccapurple;
+    -moz-animation: AnimationName 0s ease infinite;
+    animation: AnimationName 0s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0% {
+        background-position: 65% 0%
+    }
+    50% {
+        background-position: 36% 100%
+    }
+    100% {
+        background-position: 65% 0%
+    }
+}
+
+@-moz-keyframes AnimationName {
+    0% {
+        background-position: 65% 0%
+    }
+    50% {
+        background-position: 36% 100%
+    }
+    100% {
+        background-position: 65% 0%
+    }
+}
+
+@keyframes AnimationName {
+    0% {
+        background-position: 65% 0%
+    }
+    50% {
+        background-position: 36% 100%
+    }
+    100% {
+        background-position: 65% 0%
+    }
+}
+
+.l2r {
+    -webkit-animation: circle 4s linear infinite;
+    animation: circle 4s linear infinite;
+    padding: 100px;
+}
+
+@-webkit-keyframes cirlce {
+    from {
+        -webkit-transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg) translateX(150px) rotate(-360deg);
+    }
+}
+
+@keyframes circle {
+    from {
+        transform: rotate(0deg) translateX(150px) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(150px) rotate(-360deg);
+    }
+}
