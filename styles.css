@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900');
-
-body{
+body {
     font-family: 'Orbitron', sans-serif;
     display: flex;
     flex-direction: column;
@@ -11,10 +10,12 @@ h1 {
     font-size: 48px;
     font-weight: 900;
 }
+
 h2 {
     font-Size: 36px;
     font-weight: 700;
 }
+
 span {
     font-weight: 500;
 }
@@ -26,29 +27,31 @@ nav {
     text-align: right;
     width: 100vw;
 }
+
 li {
     display: inline;
     padding: 0px 20px;
 }
 
-header{
+header {
     text-align: center;
 }
 
 #about {
     text-align: center;
-    margin: 5vh 0;
     background-color: rebeccapurple;
-    padding: 5vh 10vw;
+    padding: 2vh 10vw;
     color: wheat;
 }
 
 #img-section {
     padding: 5vh 0;
     display: flex;
+    background: linear-gradient(top right, #ec74ce, #c7ffe2);
+    background: -webkit-linear-gradient(top right, #ec74ce, #c7ffe2);
 }
 
-#img-section div{
+#img-section div {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -61,6 +64,7 @@ img {
     -ms-transform: rotate(90deg);
     transform: rotate(90deg);
 }
+
 .left {
     flex: 1;
     padding: 1rem;
@@ -71,27 +75,87 @@ img {
     padding: 1rem;
 }
 
-#btn-section{
-    margin: 5vh 0 0 0;
-    text-align: center;
-    height: 10vh;
+#btn-section {
+    display: flex;
     background-color: rebeccapurple;
+    justify-content: center;
+    margin: 5vh 0;
     padding: 5vh 10vw;
     color: wheat;
 }
+
 button {
-    background-color: rebeccapurple; /* Green */
+    background-color: rebeccapurple;
     border: 1px solid wheat;
     color: wheat;
     padding: 15px 32px;
-    text-align: center;
     text-decoration: none;
-    display: inline-block;
+    align-self: flex-start;
     font-size: 16px;
+}
+
+button:hover {
+    background-color: wheat;
+    color: rebeccapurple;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: palegreen;
+    color: blue;
+}
+
+#gallery {
+    margin: 5vh 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start
+}
+
+#gallery img {
+    width: 30%;
+    height: 30%;
 }
 
 footer {
     padding: 2vh 0;
     background-color: wheat;
     color: rebeccapurple;
+}
+
+.cont2 {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ec74ce;
+}
+
+.c {
+    animation-duration: 5s;
+    animation-name: fadeAndScale;
+    animation-timing-function: cubic-bezier(.71, .55, .62, 1.57);
+}
+
+@keyframes fadeAndScale {
+    from {
+        opacity: 0;
+        transform: scale(.9, .9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+
+.c:hover {
+    -webkit-animation: spin 4s linear infinite;
+    -moz-animation: spin 4s linear infinite;
+    animation: spin 4s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
 }
