@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900');
 body {
     font-family: 'Orbitron', sans-serif;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
 }
 
 h1 {
@@ -23,9 +20,14 @@ span {
 nav {
     list-style-type: none;
     margin: 0;
+    background-color: black;
     padding: 10px 0px;
-    text-align: right;
     width: 100vw;
+}
+
+a {
+    color: white;
+    text-decoration: none;
 }
 
 li {
@@ -44,44 +46,32 @@ header {
     color: wheat;
 }
 
-#img-section {
-    padding: 5vh 0;
-    display: flex;
-    background: linear-gradient(top right, #ec74ce, #c7ffe2);
-    background: -webkit-linear-gradient(top right, #ec74ce, #c7ffe2);
-}
-
-#img-section div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-img {
-    -webkit-transform: rotate(90deg);
-    -moz-transform: rotate(90deg);
-    -o-transform: rotate(90deg);
-    -ms-transform: rotate(90deg);
-    transform: rotate(90deg);
-}
-
 .left {
     flex: 1;
     padding: 1rem;
 }
 
-.right {
-    flex: 2;
-    padding: 1rem;
+#item {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
-#btn-section {
-    display: flex;
-    background-color: rebeccapurple;
-    justify-content: center;
-    margin: 5vh 0;
-    padding: 5vh 10vw;
-    color: wheat;
+#item>div {
+    flex: 1 100%;
+    text-align: center;
+}
+
+@media all and (min-width: 600px) {
+    #item>div {
+        flex: 1 auto;
+    }
+}
+
+@media all and (min-width: 800px) {
+    #item {
+        flex: 3 0;
+    }
 }
 
 button {
@@ -110,11 +100,6 @@ button:active {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start
-}
-
-#gallery img {
-    width: 30%;
-    height: 30%;
 }
 
 footer {
