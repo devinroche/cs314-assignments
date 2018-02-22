@@ -1,7 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900');
-body {
-    font-family: 'Orbitron', sans-serif;
-}
+@font-face {
+    font-family: 'ralewayregular';
+    src: url('fonts/raleway-regular-webfont.eot');
+    src: url('fonts/raleway-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/raleway-regular-webfont.woff2') format('woff2'),
+         url('fonts/raleway-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  
+  }
+  
+  html {
+    font-family: 'ralewayregular', Verdana, sans-serif;
+  }
+  
 
 h1 {
     font-size: 48px;
@@ -34,6 +45,9 @@ li {
     display: inline;
     padding: 0px 20px;
 }
+li>a:hover {
+    color: red;
+}
 
 header {
     text-align: center;
@@ -42,7 +56,7 @@ header {
 #about {
     text-align: center;
     background-color: rebeccapurple;
-    padding: 2vh 10vw;
+    padding: 15vh 10vw;
     color: wheat;
 }
 
@@ -53,16 +67,15 @@ header {
 
 #item {
     display: flex;
-    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
 #item>div {
-    flex: 1 100%;
+    flex: 1 33%;
     text-align: center;
 }
 
-@media all and (min-width: 600px) {
+@media all and (max-width: 600px) {
     #item>div {
         flex: 1 auto;
     }
