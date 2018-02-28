@@ -2,53 +2,68 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <title>Nacho Rox</title>
-    <link rel="stylesheet" type="text/css" href="reset.css">
-    <link id='stylez' rel="stylesheet" href="styles.css">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+	<meta charset="utf-8">
+	<title>Nacho Rox</title>
+	<link rel="stylesheet" type="text/css" href="reset.css">
+	<link id='stylez' rel="stylesheet" href="styles.css">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 
 <body>
-    <nav>
-        <li>
-            <a href="#">home</a>
-        </li>
-        <li>
-            <a href="#">about</a>
-        </li>
-        <li>
-            <a href="#">contact</a>
-        </li>
-        <li style="float: right">
-            <a href="#"><img width='35%' src="img/dog-paw.png"></a>
-        </li>
-    </nav>
-    <section id='content'>
-        <section id='about'>
-            <h2>About Nacho</h2>
-            <p>
-                Doggorino wow very biscit puggo thicc blep puggo thicc woofer, very jealous pupper doing me a frighten snoot shoob corgo
-                length boy. Fluffer yapper heckin good boys big ol pupper ur givin me a spook, I am bekom fat fluffer. Tungg
-                he made many woofs pupperino long bois you are doin me a concern snoot
-                <span>borking doggo</span>, length boy puggo boof very jealous pupper. Vvv length boy the neighborhood pupper porgo,
-                very taste wow. Doggo many pats puggo blop vvv long bois, puggo pats I am bekom fat thicc ruff, h*ck extremely
-                cuuuuuute heckin borkf. Porgo noodle horse you are doing me a frighten most angery pupper I have ever seen
-                many pats heck, h*ck puggo wow very biscit fat boi.
-            </p>
-            <button>open site</button>
-        </section>
+	<section id='content'>
+		<section id='about'>
+			<h2>who r u</h2>
+		</section>
 
-        <div id='item'>
-            <div><img width='80%' src="img/doggy.png"><o>Pats woofer stop it fren, very hand that feed shibe. Boof long water shoob smol borking doggo with a long snoot for pats aqua doggo many pats, adorable doggo heckin bork. Smol snoot pupperino, yapper.</o></div>
-            <div><img width='80%' src="img/doggy.png"><p>Pats woofer stop it fren, very hand that feed shibe. Boof long water shoob smol borking doggo with a long snoot for pats aqua doggo many pats, adorable doggo heckin bork. Smol snoot pupperino, yapper.</p></div>
-            <div><img width='80%' src="img/doggy.png"><p>Pats woofer stop it fren, very hand that feed shibe. Boof long water shoob smol borking doggo with a long snoot for pats aqua doggo many pats, adorable doggo heckin bork. Smol snoot pupperino, yapper.</p></div>
-        </div>
+		<div id='form'>
+			<form>
+				<div>
+					<label for="first">First Name</label>
+					<input type="text" name="first" placeholder="Mickey">
+				</div>
 
-    </section>
-    <footer>
-        &copy; 2018
-    </footer>
+				<div>
+					<label for="last">Last Name</label>
+					<input type="text" name="last" placeholder="Mouse">
+				</div>
+
+				<div>
+					<label for="email">Email</label>
+					<input type="text" name="email" placeholder="Mouse">
+                </div>
+                <div>
+                        <label for="age">Age</label>
+                        <input type="number" name="age" placeholder="Age">
+                    </div>
+				<div>
+                    <label>Gender</label> </br>
+                    <div id='radiogroup'>
+					<input type="radio" name="gender" value="male"> Male
+					<input type="radio" name="gender" value="female"> Female
+                    <input type="radio" name="gender" value="other"> Other
+                </div>
+				</div>
+
+				<div>
+					<label for='comment'>About You</label>
+					<textarea rows="4" name="comment" placeholder="Enter text here..."></textarea>
+				</div>
+
+				<div>
+                    <label for='dd'>Favorite Animal</label>
+					<select name="dd">
+						<option value="dog">Dog</option>
+						<option value="cat">Cat</option>
+						<option value="mouse">Mouse</option>
+						<option value="other">Other</option>
+					</select>
+				</div>
+
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+
+	</section>
 </body>
 
 </html>

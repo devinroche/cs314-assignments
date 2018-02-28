@@ -1,159 +1,103 @@
 @font-face {
-    font-family: 'ralewayregular';
-    src: url('fonts/raleway-regular-webfont.eot');
-    src: url('fonts/raleway-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/raleway-regular-webfont.woff2') format('woff2'),
-         url('fonts/raleway-regular-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  
-  }
-  
-  html {
-    font-family: 'ralewayregular', Verdana, sans-serif;
-  }
-  
+	font-family: 'ralewayregular';
+	src: url('fonts/raleway-regular-webfont.eot');
+	src: url('fonts/raleway-regular-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/raleway-regular-webfont.woff2') format('woff2'), url('fonts/raleway-regular-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
 
-h1 {
-    font-size: 48px;
-    font-weight: 900;
+html {
+	font-family: 'ralewayregular', Verdana, sans-serif;
 }
 
 h2 {
-    font-Size: 36px;
-    font-weight: 700;
-}
-
-span {
-    font-weight: 500;
-}
-
-nav {
-    list-style-type: none;
-    margin: 0;
-    background-color: black;
-    padding: 10px 0px;
-    width: 100vw;
-}
-
-a {
-    color: white;
-    text-decoration: none;
-}
-
-li {
-    display: inline;
-    padding: 0px 20px;
-}
-li>a:hover {
-    color: red;
-}
-
-header {
-    text-align: center;
+	font-Size: 36px;
+	font-weight: 700;
 }
 
 #about {
-    text-align: center;
-    background-color: rebeccapurple;
-    padding: 15vh 10vw;
-    color: wheat;
-}
-
-.left {
-    flex: 1;
-    padding: 1rem;
+	text-align: center;
+	background-color: rebeccapurple;
+	padding: 5vh 10vw;
+	color: wheat;
 }
 
 #item {
-    display: flex;
-    flex-wrap: wrap;
+	display: flex;
+	flex-wrap: wrap;
 }
 
 #item>div {
-    flex: 1 33%;
-    text-align: center;
+	flex: 1 33%;
+	text-align: center;
 }
 
-@media all and (max-width: 600px) {
-    #item>div {
-        flex: 1 auto;
+@media only screen and (max-width: 768px) {
+	#item {
+		flex: 3 0;
+    }
+    #form form {
+        width: 70vw;
     }
 }
 
-@media all and (min-width: 800px) {
-    #item {
-        flex: 3 0;
-    }
+textarea {
+    resize: none;
 }
 
-button {
-    background-color: rebeccapurple;
-    border: 1px solid wheat;
-    color: wheat;
+textarea:focus, input:focus{
+    outline: none;
+}
+
+::placeholder { 
+    color: #9b59b6;
+    opacity: .4; 
+}
+
+input[type=submit]{
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    border-radius: 5px;
+    border: none;
+    background-color: #9b59b6;
+    color: white;
     padding: 15px 32px;
+    text-align: center;
     text-decoration: none;
-    align-self: flex-start;
+    display: inline-block;
     font-size: 16px;
+    border: 1px solid #9b59b6;
 }
 
-button:hover {
-    background-color: wheat;
-    color: rebeccapurple;
-    cursor: pointer;
+input[type=submit]:hover { 
+    background:white;
+    color: #9b59b6; 
+    cursor:pointer;
 }
 
-button:active {
-    background-color: palegreen;
-    color: blue;
+input, textarea, select {
+    border: 1px solid #9b59b6;
 }
 
-#gallery {
-    margin: 5vh 0;
+input[type=text], input[type=number], textarea{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#form {
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start
-}
-
-footer {
-    padding: 2vh 0;
-    background-color: wheat;
-    color: rebeccapurple;
-}
-
-.cont2 {
-    height: 100vh;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    background-color: #ec74ce;
+    padding-top: 3vh;
 }
 
-.c {
-    animation-duration: 5s;
-    animation-name: fadeAndScale;
-    animation-timing-function: cubic-bezier(.71, .55, .62, 1.57);
+#radiogroup{
+    padding: 10px 0;
 }
 
-@keyframes fadeAndScale {
-    from {
-        opacity: 0;
-        transform: scale(.9, .9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1, 1);
-    }
-}
-
-.c:hover {
-    -webkit-animation: spin 4s linear infinite;
-    -moz-animation: spin 4s linear infinite;
-    animation: spin 4s linear infinite;
-}
-
-@-webkit-keyframes spin {
-    100% {
-        -webkit-transform: rotate(360deg);
-    }
+form {
+    width: 40vw;
 }
