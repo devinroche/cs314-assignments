@@ -1,159 +1,126 @@
 @font-face {
     font-family: 'ralewayregular';
     src: url('fonts/raleway-regular-webfont.eot');
-    src: url('fonts/raleway-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/raleway-regular-webfont.woff2') format('woff2'),
-         url('fonts/raleway-regular-webfont.woff') format('woff');
+    src: url('fonts/raleway-regular-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/raleway-regular-webfont.woff2') format('woff2'), url('fonts/raleway-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-  
-  }
-  
-  html {
+}
+
+html,
+body {
+    height: 100%;
     font-family: 'ralewayregular', Verdana, sans-serif;
-  }
-  
+    background: -webkit-linear-gradient(to bottom, #8CA6DB, #B993D6);
+    background: linear-gradient(to bottom, #8CA6DB, #B993D6);
+    color: #384150;
 
-h1 {
-    font-size: 48px;
-    font-weight: 900;
 }
 
-h2 {
-    font-Size: 36px;
-    font-weight: 700;
-}
-
-span {
-    font-weight: 500;
-}
-
-nav {
-    list-style-type: none;
+body {
     margin: 0;
-    background-color: black;
-    padding: 10px 0px;
-    width: 100vw;
-}
-
-a {
-    color: white;
-    text-decoration: none;
-}
-
-li {
-    display: inline;
-    padding: 0px 20px;
-}
-li>a:hover {
-    color: red;
-}
-
-header {
-    text-align: center;
-}
-
-#about {
-    text-align: center;
-    background-color: rebeccapurple;
-    padding: 15vh 10vw;
-    color: wheat;
-}
-
-.left {
-    flex: 1;
-    padding: 1rem;
-}
-
-#item {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-#item>div {
-    flex: 1 33%;
-    text-align: center;
-}
-
-@media all and (max-width: 600px) {
-    #item>div {
-        flex: 1 auto;
-    }
-}
-
-@media all and (min-width: 800px) {
-    #item {
-        flex: 3 0;
-    }
-}
-
-button {
-    background-color: rebeccapurple;
-    border: 1px solid wheat;
-    color: wheat;
-    padding: 15px 32px;
-    text-decoration: none;
-    align-self: flex-start;
-    font-size: 16px;
-}
-
-button:hover {
-    background-color: wheat;
-    color: rebeccapurple;
-    cursor: pointer;
-}
-
-button:active {
-    background-color: palegreen;
-    color: blue;
-}
-
-#gallery {
-    margin: 5vh 0;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start
-}
-
-footer {
-    padding: 2vh 0;
-    background-color: wheat;
-    color: rebeccapurple;
-}
-
-.cont2 {
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #ec74ce;
 }
 
-.c {
-    animation-duration: 5s;
-    animation-name: fadeAndScale;
-    animation-timing-function: cubic-bezier(.71, .55, .62, 1.57);
+#container {
+    height: 80vh;
+    width: 70vw;
+    max-width: 1440px;
+    background: white;
+    box-shadow: 0 3px 8px 3px rgba(0, 0, 0, 0.20);
+    display: flex;
+    flex-direction: column;
 }
 
-@keyframes fadeAndScale {
-    from {
-        opacity: 0;
-        transform: scale(.9, .9);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1, 1);
-    }
+nav {
+    padding: 30px;
+    justify-content: space-between;
+    display: flex;
 }
 
-.c:hover {
-    -webkit-animation: spin 4s linear infinite;
-    -moz-animation: spin 4s linear infinite;
-    animation: spin 4s linear infinite;
+.content {
+    flex: 1;
 }
 
-@-webkit-keyframes spin {
-    100% {
-        -webkit-transform: rotate(360deg);
-    }
+.inner-content {
+    padding: 10% 20%;
+}
+
+footer {
+    padding: 15px 0px;
+}
+
+.nav-head {
+    display: flex;
+}
+
+.nav-head>li {
+    flex: 1;
+    padding: 0px 10px;
+}
+
+a {
+    color: #384150;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.right {
+    float: right;
+    padding: 0px 20px;
+}
+
+.right>a {
+    padding: 0px 20px;
+}
+
+.brand {
+    width: 150px;
+    padding: 10px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.brand a {
+    opacity: 0;
+    color: #384150;
+    max-width: 0;
+    display: inline-block;
+    z-index: -1;
+    text-decoration: none;
+    transition: max-width 1s ease-out .1s, opacity 1s ease-out .1s, color;
+}
+
+.brand a i {
+    float: right;
+    display: block;
+    position: relative;
+    padding: 0px 1em;
+    margin-top: 5px;
+}
+
+#diamond {
+    height: 25px;
+    width: 25px;
+    float: left;
+    z-index: 5;
+    position: relative;
+    background-color: #7FDBFF;
+    transform: rotate(45deg);
+    margin: .125em .375em;
+}
+
+#diamond:hover {
+    transform: rotate(405deg);
+    transition: all 1s ease-in-out 0s;
+}
+
+#diamond:hover~a {
+    opacity: 1;
+    max-width: 200px;
+    transition: max-width 1s ease-out .1s, opacity 1s ease-out .1s, color .2s;
 }
