@@ -50,10 +50,27 @@ a:active {
 
 h1{
 	font-size: 28px;
+	padding: 4px 0px;
 }
 h2 {
 	font-size: 22px;
+	padding: 4px 0px;
 }
 h3 {
-	font-size: 18px;
+	font-size: 20px;
+	padding: 10px 0px 2px 0px;
+	font-weight: bold;
+}
+h5 {
+	font-size: 16px;
+	padding: 4px 0px;
+}
+
+p {
+	font-size: 16px;
+	padding: 4px 0px;
+}
+
+svg {
+	padding: 20px 0px;
 }
