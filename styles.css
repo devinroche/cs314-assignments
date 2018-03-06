@@ -60,6 +60,16 @@ footer {
     padding: 0px 10px;
 }
 
+.nav-head>li:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.brand-m {
+    display: none;
+}
+
 a {
     color: #384150;
 }
@@ -125,6 +135,10 @@ a:hover {
     transition: max-width 1s ease-out .1s, opacity 1s ease-out .1s, color .2s;
 }
 
+svg {
+    text-align: center;
+}
+
 .path {
     stroke-dasharray: 1500;
     stroke-dashoffset: 1500;
@@ -141,47 +155,66 @@ a:hover {
 }
 
 fieldset {
-	margin: 0 0 10px;
-	min-width: 100%;
-	padding: 0;
-	width: 100%;
+    margin: 0 0 10px;
+    min-width: 100%;
+    padding: 0;
+    width: 100%;
 }
 
-form input[type="text"], form input[type="email"], form input[type="tel"], form input[type="url"], form textarea {
-	width:100%;
-	border:1px solid #CCC;
-	background:#FFF;
-	margin:0 0 5px;
-	padding:10px;
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="url"],
+form textarea {
+    width: 100%;
+    border: 1px solid #CCC;
+    background: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
 }
+
 textarea {
-	height:100px;
-	max-width:100%;
-  resize:none;
+    height: 100px;
+    max-width: 100%;
+    resize: none;
 }
 
 button[type="submit"] {
-	cursor:pointer;
-	width:100%;
-	border:none;
-	background: #5f27cd;
-	color:#FFF;
-	margin:0 0 5px;
-	padding:10px;
-	font-size:15px;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    background: #5f27cd;
+    color: #FFF;
+    margin: 0 0 5px;
+    padding: 10px;
+    font-size: 15px;
 }
+
 button[type="submit"]:hover {
-	background: #341f97;
-	-webkit-transition:background 0.3s ease-in-out;
-	-moz-transition:background 0.3s ease-in-out;
-	transition:background-color 0.3s ease-in-out;
+    background: #341f97;
+    -webkit-transition: background 0.3s ease-in-out;
+    -moz-transition: background 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
 }
 
-input:focus, textarea:focus {
-	outline:0;
-	border:1px solid #999;
+input:focus,
+textarea:focus {
+    outline: 0;
+    border: 1px solid #999;
 }
+
 ::-webkit-input-placeholder {
- color:#888;
+    color: #888;
 }
 
+@media screen and (max-width: 480px) {
+    svg {
+        display: none;
+    }
+    .brand {
+        display: none;
+    }
+    .brand-m {
+        display: inline-block;
+    }
+}
