@@ -1,40 +1,76 @@
-let charSwap = (a) => {
-    let str = a.split("")
-    console.log("1: ", a.substring(a.length-1) + a.substring(1, str.length-1)+ a.substring(0, 1) )
+// swap first and last characters in a string
+let charSwap = () => {
+    let str = prompt("input string")
+    lenHelper(str) ? console.log("1: ", str.substring(str.length-1) + str.substring(1, str.length-1)+ str.substring(0, 1) ) : null
 }
 
-let hiStr = (str) => str.includes("Hi") ? console.log("2: ", str) : console.log("2: ", "Hi " + str)
 
-let threeChars = (str) => str.length >= 3 ? console.log("3: ", str.substring(str.length-3, str.length) + str.substring(0, str.length-3)) : console.log("3: ", "not 3")
+let hiStr = () => {
+    str = prompt("input string")
+    lenHelper(str) ? 
+        str.toLowerCase().includes("hi") ? 
+        console.log("2: ", str) 
+        : console.log("2: ", "hi " + str)
+    : null
+}
 
-let strSent = (strLst) => {
+let threeChars = () => {
+    str = prompt("input string")
+    str.length >= 3 && str !==null ? 
+    console.log("3: ", str.substring(str.length-3, str.length) + str.substring(0, str.length-3)) 
+    : console.log("3: ", "not 3")
+}
+
+let strSent = () => {
+    let strLst = prompt("enter comma separated list (3)")
     let strArr = strLst.split(",")
+    strArr.length === 3 ?
     console.log("4: ", `My favorite color is ${strArr[0]}, ${strArr[1]} are awesome, and I love ${strArr[2]}`)
+    : console.log("4: invalid length")
 }
 
-let upLow = (str) => {
-    console.log("5: ", str.length > 3 ? str.substring(0, 3).toLowerCase() + str.slice(3) : str.toUpperCase())
+// convert first three characters to either upper or lower case
+let upLow = () => {
+    let str = prompt("enter string")
+    let finalStr = str.length > 3 ? str.substring(0, 3).toLowerCase() + str.slice(3) : str.toUpperCase()
+    console.log("5: ", finalStr)
 }
 
-let intSwap = (intArr) => {
-    if(intArr.length > 1) { 
+// swap first and last integers in array
+let intSwap = () => {
+    intArr = prompt("enter comma separated integers").split(",").map(Number)
+    if(lenHelper(intArr)) { 
         let first = intArr.slice(0,1)[0]
         intArr.splice(0, 1, intArr.slice(-1)[0])
         intArr.splice(-1, 1, first)
         console.log("6: ", intArr)
+        alert(intArr)
     } 
     else console.log("too small")
 }
 
-let longStr = (strArr) => console.log("7: ", strArr.sort((a, b) => {
-    return b.length > a.length
-})[0])
-
-let bigEven = (numArr) => {
-    let evenArr = numArr.filter((el, idx) => idx %2 !== 0)
-    console.log("8: ", evenArr.sort((a, b) => b > a)[0])
+//prompt comma separated list (strings) return longest string
+let longStr = (strArr) => {
+    strArr = prompt("enter comma separted list of strings")
+    strArr = strArr.split(",").map((el) => el.trim())
+    let bigStr = strArr.sort((a, b) => {
+        return b.length > a.length
+    })[0]
+    console.log("7: ", bigStr)
+    alert("biggest string: "+ bigStr)
 }
 
+// prompt for comma separated list (ints) and return largest even number
+let bigEven = () => {
+    let numArr = prompt("enter list of numbers separated by comma")
+    numArr = numArr.split(",")
+    numArr = numArr.map((el) => Number(el))
+    let evenArr = numArr.filter((el, idx) => idx %2 !== 0)
+    console.log("8: ", evenArr.sort((a, b) => b > a)[0])
+    alert("Largest Even Number: " + evenArr.sort((a, b) => b > a)[0])
+}
+
+// alert current day and time 
 let dateAlert = () => {
     let days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
         now = new Date()
@@ -46,26 +82,32 @@ let dateAlert = () => {
     alert(`Today is ${days[now.getDay()]}\n It is ${hours + ":" + minutes +" " + am_pm}`)
 }
 
-let infiniteArgs = (...args) => {
-    
+//accept unlimited args and print as single string
+let infiniteArgs = (...args) => alert(args.join(" "))
+
+let lenHelper = (str) => {
+    let retVal = false
+    str !== null && str.length >= 1 ? retVal = true : retVal = false
+    retVal === false ? console.log("invalid") : null
+    return retVal
 }
 
-charSwap("pizza")
+// charSwap()
 
-hiStr('Hi dude')
-hiStr('foobar')
+// hiStr()
 
-threeChars('pizza')
+// threeChars()
 
-strSent("foo, bar, baz")
+// strSent()
 
-upLow("foo")
-upLow("FOOBAR")
+// upLow()
 
-intSwap([1,2,3,4,5])
+// intSwap()
 
-longStr(["foo", "bazzle", "test", "asdfasdf", "dog"])
+// longStr()
 
-bigEven([1,2,3,7,15,16, 8,9,10,11, 4,5,6,12,13,14])
+// bigEven()
 
-dateAlert()
+// dateAlert()
+
+// infiniteArgs("hi", "programming", "rocks", "twitch", "tv", "mcscruples")
