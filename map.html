@@ -23,31 +23,16 @@
 		</nav>
 
 		<header>
-			Fortnite
+			Map
 		</header>
 
 		<section class="inner-main">
-            <div id='img-container'>
-                <img id='homeImg' width='100%' height='100%' src='images/fn1.jpg'/>
+            <div id="map"></div>
+            <div>
+                <p><strong>Marker 0: </strong> Durham Elementary School is where I went to elementary school. I learned to tie my shoes which was pretty helpful.</p>
+                <p><strong>Marker 1: </strong> Fowler Middle School is where I went to middle school. I spent over 42 days in ISS (in school suspension) since I was a bad egg.</p>
+                <p><strong>Marker 2: </strong> Tigard High School is where I went to high school. I got good at running while coaching myself and was able to go D1 and run at GU.</p>
             </div>
-            <h2>What is it?</h2>
-            <p>
-				The main gameplay for Fortnite Battle Royale follows the battle royale genre's standard format: up to 100 players skydive
-				then deploy a glider from floating buses ("Battle Bus") onto a consistent map, which includes random distribution of
-				weapons, shield, and other combat support features. The goal is to be the last player (or team, if playing in small squads)
-				alive by killing or avoiding other players. Over time, the game's safe zone (representing the eye of a Storm that is
-				ravaging the world), decreases in size, and players caught outside the zone will take damage, potentially dying. This
-				directs the surviving players into tighter spaces, forcing player encounters. Players can loot defeated enemies for equipment.
-				Random supply drops will occur during a match, providing random weapons and items.
-            </p>
-            <h2>Why is it so big?</h2>
-            <ul>
-                <li>Sharable Moments</li>
-                <li>Smart Design</li>
-                <li>Free & Easy</li>
-                <li>Depth and Sophistication</li>
-                <li>Social Engagement</li>
-            </ul>
 		</section>
 
 		<footer>
@@ -57,7 +42,10 @@
 	</div>
 	<div class="col subcol"></div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="index.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key= AIzaSyD8aQPvOl10UPe4s_Wtom9id9ZZmkXXXOY&callback=initMap"
+    async defer></script>
+    <script src="index.js"></script>
+
 </body>
 
 </html>
