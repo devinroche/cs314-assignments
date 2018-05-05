@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Final</title>
+	<link rel="stylesheet" href="/reset.css">
+	<link rel="stylesheet" href="/index.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+	crossorigin="anonymous">
+</head>
+
+<body>
+	<div class="col subcol"></div>
+	<div class='col' id='main'>
+
+		<nav>
+			<a href="/" class="active">Home</a> |
+			<a href="/form">Form</a> |
+			<a href="/map">Map</a> |
+			<a href="/api">API</a>
+		</nav>
+
+		<header>
+			Sign up to be a fortnite pro
+		</header>
+
+		<section class="inner-main">
+            <div id='form-container'>
+                <form onsubmit="return false;">
+                    <div>
+                        <input type="text" id="name" name="name">
+                        <label for="name">Name:</label>
+                    </div>
+                    <div>
+                        <input type="email" id="mail" name="email">
+                        <label for="mail">E-mail:</label>
+                    </div>
+                    <div>
+                        <input id="wins" type="number" name="wins"></input>
+                        <label for="wins">Wins:</label>
+                    </div>
+                    <div class="button">
+                        <button type="button" onclick="formHandler()">Submit</button>
+                    </div>
+                </form>
+            </div>
+		</section>
+
+		<footer>
+			footer
+		</footer>
+
+	</div>
+	<div class="col subcol"></div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="/index.js"></script>
+</body>
+
+</html>

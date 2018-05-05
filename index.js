@@ -1,101 +1,26 @@
-let todos
-let albums
-let showTodos = false
-let showAlbums = false
+let images = ["fn1.jpg", "fn2.jpg", "fn3.jpg", "fn4.jpg"]
+let imgContainer = document.getElementById("homeImg");
+let imgCount = 1;
 
-$(() => {
-    $.get('https://jsonplaceholder.typicode.com/users')
-        .done((data) => {
-        $.each(data, function(idx, el) {
-            $('#data').append($(`
-            <div class='user' id='main-${el.id}'>
-                ${el.name} <br>
-                ${el.email} <br>
-                ${el.company.name} <br>
-                <button id='${el.id}' class='todoBtn'>To Do</button>
-                <button id='${el.id}' class='albumBtn'>Albums</button>
-                <br><br>
-            </div>`));
-        });
-    })
+$(document).ready(() => {
+    if(window.location.pathname === '/') 
+        setInterval(changeImg, 3500)
 
-    $('#data').on('click', '.todoBtn', function(){
-        todoDataHandler(this.id)
-    });
-
-    $('#data').on('click', '.albumBtn', function(){
-        albumDataHandler(this.id)
-    });
 })
 
-let hideAlbums = () => $(`.albums`).hide(500)
-let hideTodo = () => $(`.todos`).hide(500)
-let toggleShows = (t, a) => {
-    showTodos = t;
-    showAlbums = a;
+let changeImg = () => {
+    imgContainer.src = `images/${images[imgCount]}`;
+    imgCount = (imgCount === images.length - 1) ? 0 : imgCount + 1;
 }
 
-let todoDataHandler = (id) => {
-    if(!showTodos) {
-        if(typeof todos === 'undefined') {
-            $.get('https://jsonplaceholder.typicode.com/todos', (todo) => {
-                todos = todo
-                addTodos(todos.filter((el) => el.userId.toString() === id), id)
-            })
-        }
-        else {
-            addTodos(todos.filter((el) => el.userId.toString() === id), id)
-        }
-
-        toggleShows(true, false)
-        hideAlbums()
-    }
-    else { 
-        toggleShows(false, false)
-        hideTodo()
-    }
-}
-
-let albumDataHandler = (id) => {
-    if(!showAlbums) {
-        if(typeof albums === 'undefined') {
-            $.get('https://jsonplaceholder.typicode.com/albums', (album) => {
-                albums = album
-                addAlbums(albums.filter((el) => el.userId.toString() === id), id)
-            })
-        }
-        else {
-            addAlbums(albums.filter((el) => el.userId.toString() === id), id)
-        }
-
-        hideTodo()
-        toggleShows(false, true)
-    }
-    else { 
-        toggleShows(false, false)
-        hideAlbums()
-    }
-}
-
-let addTodos = (userTodos, id) => {
-    $.each(userTodos, (idx, el) => {
-        let isDone = el.completed===true ? "fas fa-check" : ""
-        $(`#main-${id}`).append($(`
-            <div class='todos'>
-                ${el.id}: ${el.title} <i class='${isDone}'></i>
-                <br> <br>
-            </div>
-        `))
-    })
-}
-
-let addAlbums = (userAlbums, id) => {
-    $.each(userAlbums, (idx, el) => {
-        $(`#main-${id}`).append($(`
-            <div class='albums'>
-                ${el.id}: ${el.title}
-                <br> <br>
-            </div>
-        `))
-    })
+let formHandler = () => {
+    let form = document.forms[0]
+    let fd = Object.values(form).reduce((obj,field) => { obj[field.name] = field.value; return obj }, {})
+    console.log(fd)
+    if(!fd.name)
+        return false
+    
+    let div = document.createElement('div')
+    div.innerHTML = fd.name;
+    return document.getElementById('form-container').appendChild(div)
 }

@@ -1,68 +1,117 @@
 @font-face {
-  font-family: 'ralewayregular';
-  src: url('fonts/raleway-regular-webfont.eot');
-  src: url('fonts/raleway-regular-webfont.eot?#iefix') format('embedded-opentype'),
-       url('fonts/raleway-regular-webfont.woff2') format('woff2'),
-       url('fonts/raleway-regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-
+	font-family: 'ralewayregular';
+	src: url('fonts/raleway-regular-webfont.eot');
+	src: url('fonts/raleway-regular-webfont.eot?#iefix') format('embedded-opentype'), url('fonts/raleway-regular-webfont.woff2') format('woff2'), url('fonts/raleway-regular-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
 }
 
 html {
-  font-family: 'ralewayregular', Verdana, sans-serif;
-  box-sizing: border-box;
-}
-
-section {
-  position: relative;
-  padding: 50px 0;
-}
-
-.inner-content {
-  position: relative;
+	font-family: 'ralewayregular', Verdana, sans-serif;
+	box-sizing: border-box;
+	overflow: scroll;
+	overflow-x: hidden;
 }
 
 .dark-bg {
-  background-color: lightgray;
+	background-color: lightgray;
 }
 
 p {
-  padding-bottom: 10px;
+	padding-bottom: 10px;
 }
 
 button {
-  padding: 5px 20px;
-  margin: 0 10px;
+	padding: 5px 20px;
+	margin: 0 10px;
 }
 
 li {
-  padding: 3px 0;
+	padding: 3px 0;
 }
 
 header {
-    text-align: center;
-    background: #9b59b6;
-    padding: 10px;
-    color: #ffffff
+	text-align: center;
+	background: #9b59b6;
+	padding: 40px;
+	font-size: 32px;
+	margin-bottom: 5px;
+	color: #ffffff;
 }
 
-.user {
-    text-align: center;
-    border-top: 1px solid rgba(0, 0, 0, .1);
-    border-bottom: 1px solid rgba(0, 0, 0, .1);
-    padding: 10px 0px;
+body {
+	display: flex;
+	max-height: 100vh;
+	justify-content: space-between;
 }
 
-button {
-    background-color: #9b59b6;
-    border: none;
-    color: white;
-    padding: 12px 14px;
-    margin-top: 10px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
+.col {
+	padding: 10px 10px 0px 10px;
+	flex: 1 100%;
+}
+
+.subcol {
+	flex: 1 auto;
+}
+
+#main {
+	flex: 6 0px;
+	overflow-y: scroll;
+}
+
+.inner-main {
+	flex: 1;
+}
+
+footer {
+	padding-bottom: 0;
+}
+
+nav {
+	padding-bottom: 10px;
+}
+
+nav a {
+	padding: 8px;
+	color: #9b59b6;
+	text-decoration: none;
+}
+
+::-webkit-scrollbar {
+	width: 0px;
+	background: transparent;
+}
+
+form {
+    width: 30vw;
+}
+
+form div {
+	display: flex;
+    align-items: center;
+    padding: 5px 0;
+}
+
+label {
+	order: 1;
+	width: 10em;
+	padding-right: 0.5em;
+}
+
+input,
+textarea,
+select {
+	order: 2;
+	flex: 1 1 auto;
+}
+
+input:focus~label,
+textarea:focus~label,
+select:focus~label {
+	color: #933;
+}
+
+#form-container {
+    display: flex;
+    justify-content: center;
 }
