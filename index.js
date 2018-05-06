@@ -80,12 +80,6 @@ let initMap = () => {
   
   
     })
-    // var marker = new google.maps.Marker({
-    //     position: myLatLng,
-    //     map: map,
-    //     title: 'Hello World!'
-    //   });
-
 }
 
 let initApi = () => {
@@ -102,6 +96,7 @@ let displayData = (keysArr) => {
     keysArr.map((k) => {
         li = document.createElement('li');
         li.id = k
+        li.className = 'apiLi'
         li.innerHTML +=  k;
         return ul.appendChild(li)
     })
@@ -126,10 +121,9 @@ let displayDoggo = (dArr, did) => {
     var br = document.createElement("br");
     document.getElementById(did).appendChild(br)
     deleteAllDoggos()
-    console.log(dArr[0], did)
     img = document.createElement('img')
     img.id = 'dogImg'
-    img.src = dArr[0]
+    img.src = dArr[Math.floor(Math.random() * dArr.length)]
     return document.getElementById(did).appendChild(img)
 }
 

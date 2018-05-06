@@ -41,30 +41,23 @@ header {
 
 body {
 	display: flex;
-	max-height: 100vh;
+    padding: 10px;
+    flex-direction: column;
+    min-height: 100vh;
 	justify-content: space-between;
 }
 
-.col {
-	padding: 10px 10px 0px 10px;
-	flex: 1 100%;
-}
-
-.subcol {
-	flex: 1 auto;
-}
-
 #main {
-	flex: 6 0px;
-	overflow-y: scroll;
+	flex:  1;
 }
 
 .inner-main {
-	flex: 1;
+    flex: 1;
 }
 
 footer {
-	padding-bottom: 0;
+    padding-bottom: 0;
+    text-align: center;
 }
 
 nav {
@@ -76,20 +69,13 @@ nav a {
 	color: #9b59b6;
 	text-decoration: none;
 }
-
-::-webkit-scrollbar {
-	width: 0px;
-	background: transparent;
+form{
+    width: 100%;
 }
-
-form {
-    width: 30vw;
-}
-
 form div {
 	display: flex;
     align-items: center;
-    padding: 5px 0;
+    padding: 5px 0
 }
 
 label {
@@ -116,6 +102,74 @@ select:focus~label {
     justify-content: center;
 }
 
+#dogUl {
+    width: 60vw;
+    padding: 2px;
+    margin: auto;
+}
+#dogImg{
+    max-width:100%;
+    max-height:100%;
+}
 #map {
     height: 60vh;
+}
+
+.apiLi {
+    background-color: #9b59b6;
+    color: #ffffff;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.apiLi:hover {
+    color: #9b59b6;
+    background-color: #ffffff;
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+h4 {
+    display: block;
+    font-size: 1em;
+    margin-top: 1.33em;
+    margin-bottom: 1.33em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+h5 {
+    display: block;
+    font-size: .83em;
+    margin-top: 1.67em;
+    margin-bottom: 1.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
 }
